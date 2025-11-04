@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "User_Footprints")(type "KiCad")(uri "${USER_FOOTPRINT_DIR}/User_Footprints.pretty")(options "")(descr ""))
+)
