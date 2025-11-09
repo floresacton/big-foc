@@ -38,8 +38,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 26.0,
-          "width": 9.2
+          "height": 41.0,
+          "width": 5.0
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -616,7 +616,7 @@
     "netclass_patterns": [
       {
         "netclass": "Ground",
-        "pattern": "(GND|VSS|0)"
+        "pattern": "(GND.*|VSS|0)"
       },
       {
         "netclass": "Power",
