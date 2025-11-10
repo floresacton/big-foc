@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 41.0,
-          "width": 5.0
+          "drill": 0.762,
+          "height": 1.524,
+          "width": 1.524
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -130,7 +130,7 @@
       "rules": {
         "max_error": 0.005,
         "min_clearance": 0.127,
-        "min_connection": 0.127,
+        "min_connection": 0.09,
         "min_copper_edge_clearance": 0.3,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.33,
@@ -141,8 +141,8 @@
         "min_silk_clearance": 0.15,
         "min_text_height": 0.1,
         "min_text_thickness": 0.1,
-        "min_through_hole_diameter": 1.0,
-        "min_track_width": 0.127,
+        "min_through_hole_diameter": 0.3,
+        "min_track_width": 0.09,
         "min_via_annular_width": 0.13,
         "min_via_diameter": 0.56,
         "solder_mask_to_copper_clearance": 0.005,
@@ -482,7 +482,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "power.kicad_pro",
+    "filename": "logic.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -616,7 +616,7 @@
     "netclass_patterns": [
       {
         "netclass": "Ground",
-        "pattern": "(GND.*|VSS|0)"
+        "pattern": "(GND|VSS|0)"
       },
       {
         "netclass": "Power",
@@ -656,7 +656,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "power.step",
+      "step": "logic.step",
       "svg": "",
       "vrml": ""
     },
@@ -769,15 +769,15 @@
       "Root"
     ],
     [
-      "82d0dbf7-4aa4-4f3d-860b-2473033c4b62",
+      "779e1fa4-3303-499a-a8c9-802d269575cd",
       "Phase1"
     ],
     [
-      "fab384c5-8727-477f-89dd-0ed275dc28df",
+      "0696e949-d7f0-4354-b287-213adaf86c36",
       "Phase2"
     ],
     [
-      "819d16f7-432c-45c0-a82d-e0be316f139e",
+      "0400f160-411e-43bb-af95-4f75ff5b3dee",
       "Phase3"
     ]
   ],

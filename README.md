@@ -1,5 +1,11 @@
 # big-foc
-High Power FOC Inverter
+Field Oriented Control Inverter
+70V 160A 10kW continuous
+12kW peak
+99% efficiency at 15kW
+50$ BOM Cost
+65x75x32mm size
+Ignoring the heatsink, that's 64kW/L :)
 
 ## Design Strategy
 
@@ -9,7 +15,7 @@ High Power FOC Inverter
 - **Component Voltage Rating**: Components must be rated at >1.5x-2x battery voltage
   - Example: 16S battery (67.2V max) → 100V+ rated components minimum
   - Margin for voltage spikes, ringing
-- **Thermal Limitation**: Max accepted power dissipation at continuous and peak power
+- **Thermal Limitation**: Max accepted power dissipation at continuous and peak power, <=100C
 
 ### 2. Power Stage Design
 
@@ -39,7 +45,7 @@ High Power FOC Inverter
 #### Switching Losses
 - Target switching frequency from 20-25khz (non audible range & less harmonic distortion)
 - Transformers and motors are inductive loads (different switching waveforms than resistive switching loss)
-- Switching loss ~= 1/2*switching frequency*current*voltage*(t_on+t_off)
+- Switching loss ~= 1/2\*switching frequency\*current*voltage\*(t_on+t_off)
 - t_on, t_off ~= Q_gate/I_charge
 - I_charge = gate drive current
 
@@ -67,8 +73,12 @@ High Power FOC Inverter
 
 #### Shunt Resistors
  - Should be around or slightly below rds_on of FETs
- - Good to have ~100mV at full current
+ - Good to have about 50-75mV at full current
+ - Select for 20V/V amplifier (INA181A1 super common & cheap)
+ - <=50ppm for 100C temp rise scenario
  - Need amplifier right next to shunt
+ - Need center VREF amp for negative and positive current
+ - Need to choose settling time to 1% better than 95% duty cycle (bootstrap is limiting factor)
 
 #### Magnetic Sensing
 - Hall-effect sensing built in packages
@@ -80,9 +90,9 @@ High Power FOC Inverter
 
 #### Power Dissipation Calculation
  - On average 2 half bridges are conducting fully, one is not conducting
-- total switching loss ~= 4*single switch loss
+- total switching loss ~= 4\*single switch loss
 - gate charge loss is usually quite small compared to switching and resistive losses for 25khz
-- total conduction loss ~= 2*single conduction loss
+- total conduction loss ~= 2\*single conduction loss
 
 #### FET Cooling Orientation
 - **Top-Side Cooling**: FETs mounted with drain pad facing up
@@ -98,7 +108,7 @@ High Power FOC Inverter
 1. Calculate junction-to-case thermal resistance (datasheet)
 2. Add PCB thermal resistance
 3. Add heatsink thermal resistance
-4. Junction temp = Ambient + (Total losses * Total thermal resistance)
+4. Junction temp = Ambient + (Total losses \* Total thermal resistance)
 5. Target <100C but <60C is better
 
 ### 6. Protection and Sensing
@@ -149,7 +159,7 @@ High Power FOC Inverter
 
 ### 9. PCB Layout (Very very important)
  - Low inductance switching loop
- - di/dt * L = voltage induced over drain source
+ - di/dt \* L = voltage induced over drain source
  - Low esr (usually MLCC) caps in low inductance switching loop
  - very rough calc Q_sustain = t_deadtime*I_peak
  - Q_sustain / V_spike = C_switch loop
@@ -158,5 +168,41 @@ High Power FOC Inverter
  - Shunt amplifier right next to shunt resistor
 
 ### 10. Example Calculations (for my inverter)
- - 
+- **Motor Characteristics**
+	- 40uH phase to phase inductance
+	- AMKs have 2.5nF inter winding capacitance
+	- Couldn't find inter-winding capacitance of mine, but I think its relatively small losses compared to conduction
+- [MOSFET loss equations](https://www.ti.com/lit/an/slyt664/slyt664.pdf?ts=1762657470589)
+- [Layout and more equations](https://www.infineon.com/assets/row/public/documents/24/42/infineon-designing-an-optimized-half-bridge-dc-dc-converter-with-medium-voltage-coolgan-transistors-applicationnotes-en.pdf)
+ - **Losses**
+	 - Power 8.4kW at 120A rms current or two phases at 170A
+	 - 2 phases on at a time on average (same thing as 3 RMS currents)
+	 - parallel rds @ 15V: 0.55mohm at 25C, 0.85mohm at 100C
+	 - P_cond_tot = 2\*170\*170\*0.00055 = 32W
+	 - Q_gs2 = 20nC, Q_gd = 50nC, Q_eff = 70nC
+	 - Q_actual = 140nC cause parallel FETs
+	 - P_sw = 2\*70V\*170A\*25khz\*140nC/4A = 20.8W
+	 - P_sw_total = 8.925W\*2 half bridge = 41.6W
+	 - P_coss = 12FETs \* 25khz \* 70V^2 \* 2.3nF = 3.4W
+	 - P_winding = 3 phase \* 25khz \* 70V^2 \* 2.5nF = 0.9W
+	 - P_gate_total = 12 FETs\*250nC\*15V\*25khz = 1.1W
+	 - P_gate_drive = <1W
+	 - Deadtime 150ns
+	 - P_diode = ~1.5\*1.2V\*170A\*25khz\*150ns = 1.2W (a bit sus math but reasonable)
+	 - 5% dissipation factor for 1206 2.2uF ~ 10mohm I think for equivalent 10 (randomish number)
+	 - Sw_energy = 70V\*170A\*140nC/4A = 0.4mJ per phase
+	 - C_droop ~= 0.4mJ/(20uF \* 70V) = 0.3V
+	 - The Vrms of the droop is prob below ~50mV
+	 - P_cap_sw = 50mV^2/10mohm = 0.25W*3phases comes to <1W
+	 - I_ripple ~= 110A
+	 - Assuming 70A into ceramics and 40A into electrolytic
+	 - 80 ceramics / 70A = 0.87A per ceramic
+	 - P_ripple_cer = 0.875^2 \* 100mohm = 80mW
+	 - P_cer_tot = 0.08*80 = 6.4W
+	 - Electrolytic 3mohm at 25khz (susish think ok)
+	 - I_elec ~= 40A/10 = 4A
+	 - P_elec = 4A^2 \* 3mohm = 48mW
+	 - P_elec_tot = 48mW \* 10 = 0.5W
+	 - Total at 8.4kW = 32+41.6+1.1+1.2+1+1+6.4+0.5+3.4W = 89.1W
+	 - About 98.9% efficiency
 

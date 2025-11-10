@@ -201,7 +201,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_02x01"
+		(symbol "Connector_Generic:Conn_02x02_Odd_Even"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -217,8 +217,8 @@
 					)
 				)
 			)
-			(property "Value" "Conn_02x01"
-				(at 1.27 -2.54 0)
+			(property "Value" "Conn_02x02_Odd_Even"
+				(at 1.27 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -243,7 +243,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, double row, 02x01, this symbol is compatible with counter-clockwise, top-bottom and odd-even numbering schemes., script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, double row, 02x02, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -270,10 +270,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_02x01_1_1"
+			(symbol "Conn_02x02_Odd_Even_1_1"
 				(rectangle
 					(start -1.27 1.27)
-					(end 3.81 -1.27)
+					(end 3.81 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -294,8 +294,30 @@
 					)
 				)
 				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
 					(start 3.81 0.127)
 					(end 2.54 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -2.413)
+					(end 2.54 -2.667)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -323,6 +345,24 @@
 					)
 				)
 				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
 					(at 7.62 0 180)
 					(length 3.81)
 					(name "Pin_2"
@@ -333,6 +373,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1913,6 +1971,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 73.66) (xy 128.27 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d33b313-712b-4544-a1a7-5d53f8c28048")
+	)
+	(wire
+		(pts
 			(xy 55.88 91.44) (xy 55.88 93.98)
 		)
 		(stroke
@@ -2413,7 +2481,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 73.66) (xy 128.27 73.66)
+			(xy 124.46 71.12) (xy 128.27 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2633,6 +2701,16 @@
 	)
 	(wire
 		(pts
+			(xy 107.95 71.12) (xy 111.76 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eef05713-140d-4397-8cfe-48f96d4f2dcb")
+	)
+	(wire
+		(pts
 			(xy 60.96 114.3) (xy 63.5 114.3)
 		)
 		(stroke
@@ -2731,6 +2809,16 @@
 		)
 		(uuid "4881bb8d-6eab-4055-8597-b21f3e83ca0b")
 	)
+	(label "GH"
+		(at 128.27 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4d519604-125d-4e7c-a283-f82930b63fb3")
+	)
 	(label "CUR"
 		(at 132.08 88.9 180)
 		(effects
@@ -2760,16 +2848,6 @@
 			(justify left bottom)
 		)
 		(uuid "5ebbaabc-015a-4180-9f44-1a5e656950c2")
-	)
-	(label "PH"
-		(at 128.27 73.66 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "609c8175-375b-4c36-8c6c-90a56f38e232")
 	)
 	(label "PH"
 		(at 31.75 78.74 0)
@@ -2840,6 +2918,26 @@
 			(justify right bottom)
 		)
 		(uuid "def1a218-c257-481f-a128-e9806cce6f3d")
+	)
+	(label "PH"
+		(at 128.27 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ef81f40a-b939-4de7-a311-7dedd82ab795")
+	)
+	(label "PH"
+		(at 107.95 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f798c109-f670-47f2-b282-a45d785144c9")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -3486,98 +3584,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:IPT015N10N5")
-		(at 53.34 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "398aff49-79f5-43fa-9052-5c2bf1f99fe6")
-		(property "Reference" "Q2"
-			(at 59.182 71.374 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPT015N10NF2S"
-			(at 59.182 73.914 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1"
-			(at 58.42 73.025 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8602927687791370240"
-			(at 58.42 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.5mOhm Ron, Qg (typ) 169.0nC, PG-HSOF-8"
-			(at 53.34 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C19632811"
-			(at 53.34 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "31751a52-84d3-4c37-abc6-3bf01808c0c9")
-		)
-		(pin "1"
-			(uuid "2ca04ebb-4475-4686-b3a8-944b94924543")
-		)
-		(pin "2"
-			(uuid "1ad12482-a67c-43fb-b55f-f93e94ae5b5b")
-		)
-		(instances
-			(project "power"
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/819d16f7-432c-45c0-a82d-e0be316f139e"
-					(reference "Q10")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/82d0dbf7-4aa4-4f3d-860b-2473033c4b62"
-					(reference "Q2")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
-					(reference "Q6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VCC")
 		(at 68.58 101.6 0)
 		(unit 1)
@@ -3669,7 +3675,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPT015N10NF2S"
+		(property "Value" "SP010N01BGHTO"
 			(at 33.782 89.154 0)
 			(effects
 				(font
@@ -3689,7 +3695,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8602927687791370240"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8603023187903070208"
 			(at 33.02 90.17 0)
 			(effects
 				(font
@@ -3699,7 +3705,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.5mOhm Ron, Qg (typ) 169.0nC, PG-HSOF-8"
+		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.1mOhm Ron, Qg (typ) 208.0nC, PG-HSOF-8"
 			(at 27.94 86.36 0)
 			(effects
 				(font
@@ -3708,7 +3714,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C19632811"
+		(property "LCSC" "C22385350"
 			(at 27.94 86.36 0)
 			(effects
 				(font
@@ -4179,6 +4185,98 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_02x02_Odd_Even")
+		(at 116.84 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6bb86458-315a-42c4-9e11-fbf37df05ed1")
+		(property "Reference" "J1"
+			(at 118.11 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_02x02_Odd_Even"
+			(at 118.11 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x02_P1.27mm_Vertical_SMD"
+			(at 116.84 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x02, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 116.84 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C27985143"
+			(at 116.84 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "23c3fb22-64d1-4356-aa23-8bb3aa6bae0a")
+		)
+		(pin "3"
+			(uuid "f62aeb76-3342-4532-bc08-efe2b2027c23")
+		)
+		(pin "2"
+			(uuid "da0a2fa6-a1d6-45d8-846b-2571716369af")
+		)
+		(pin "4"
+			(uuid "4d9e5226-8603-40c2-a597-ae57fd9780bc")
+		)
+		(instances
+			(project ""
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/819d16f7-432c-45c0-a82d-e0be316f139e"
+					(reference "J5")
+					(unit 1)
+				)
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/82d0dbf7-4aa4-4f3d-860b-2473033c4b62"
+					(reference "J1")
+					(unit 1)
+				)
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Current:INA181")
 		(at 71.12 111.76 0)
 		(unit 1)
@@ -4343,6 +4441,98 @@
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
 					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:IPT015N10N5")
+		(at 53.34 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "71cf574d-0d74-40bc-abb8-6dbee13703d7")
+		(property "Reference" "Q2"
+			(at 59.182 71.374 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SP010N01BGHTO"
+			(at 59.182 73.914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1"
+			(at 58.42 73.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8603023187903070208"
+			(at 58.42 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.1mOhm Ron, Qg (typ) 208.0nC, PG-HSOF-8"
+			(at 53.34 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22385350"
+			(at 53.34 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "a0d041dd-5cca-404c-9309-8d5936f23256")
+		)
+		(pin "1"
+			(uuid "639b925f-c645-406d-9cb6-4b5326a4fe34")
+		)
+		(pin "2"
+			(uuid "4ab6883e-d31b-4f82-b099-11a7578aa70c")
+		)
+		(instances
+			(project "power"
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/819d16f7-432c-45c0-a82d-e0be316f139e"
+					(reference "Q10")
+					(unit 1)
+				)
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/82d0dbf7-4aa4-4f3d-860b-2473033c4b62"
+					(reference "Q2")
+					(unit 1)
+				)
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
+					(reference "Q6")
 					(unit 1)
 				)
 			)
@@ -4515,91 +4705,6 @@
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
 					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_02x01")
-		(at 116.84 73.66 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "808513b9-44d6-4f72-9edf-63345e5b36a5")
-		(property "Reference" "J1"
-			(at 118.11 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_02x01"
-			(at 118.11 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x01_P1.27mm_Vertical_SMD"
-			(at 116.84 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, double row, 02x01, this symbol is compatible with counter-clockwise, top-bottom and odd-even numbering schemes., script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 116.84 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C2881949"
-			(at 116.84 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "a3520836-5b1e-4cec-be58-af53ea1a80d3")
-		)
-		(pin "1"
-			(uuid "40ff5875-8d08-46fe-94dc-593aad92ca45")
-		)
-		(instances
-			(project ""
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/819d16f7-432c-45c0-a82d-e0be316f139e"
-					(reference "J5")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/82d0dbf7-4aa4-4f3d-860b-2473033c4b62"
-					(reference "J1")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
-					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -4854,6 +4959,98 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:IPT015N10N5")
+		(at 53.34 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "92bc6661-9553-40ef-a18f-74d594914618")
+		(property "Reference" "Q4"
+			(at 59.182 86.614 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SP010N01BGHTO"
+			(at 59.182 89.154 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1"
+			(at 58.42 88.265 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8603023187903070208"
+			(at 58.42 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.1mOhm Ron, Qg (typ) 208.0nC, PG-HSOF-8"
+			(at 53.34 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22385350"
+			(at 53.34 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "18d715d6-5df2-4eaf-b666-ecaa43e65add")
+		)
+		(pin "1"
+			(uuid "dd423d07-2f73-4113-9f5b-564e6db4a87d")
+		)
+		(pin "2"
+			(uuid "9f0d3dbd-a69d-4157-956d-d7978869e039")
+		)
+		(instances
+			(project "power"
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/819d16f7-432c-45c0-a82d-e0be316f139e"
+					(reference "Q12")
+					(unit 1)
+				)
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/82d0dbf7-4aa4-4f3d-860b-2473033c4b62"
+					(reference "Q4")
+					(unit 1)
+				)
+				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
+					(reference "Q8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 88.9 41.91 0)
 		(unit 1)
@@ -5016,15 +5213,15 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:IPT015N10N5")
-		(at 53.34 86.36 0)
+		(at 27.94 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b3e5eed5-ee11-42b6-9b5b-2a0052b83427")
-		(property "Reference" "Q4"
-			(at 59.182 86.614 0)
+		(uuid "bf9d8554-d1c8-45d0-b278-f35e70b770b0")
+		(property "Reference" "Q1"
+			(at 33.782 71.374 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5032,8 +5229,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPT015N10NF2S"
-			(at 59.182 89.154 0)
+		(property "Value" "SP010N01BGHTO"
+			(at 33.782 73.914 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5042,7 +5239,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1"
-			(at 58.42 88.265 0)
+			(at 33.02 73.025 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5052,8 +5249,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8602927687791370240"
-			(at 58.42 90.17 0)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8603023187903070208"
+			(at 33.02 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5062,8 +5259,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.5mOhm Ron, Qg (typ) 169.0nC, PG-HSOF-8"
-			(at 53.34 86.36 0)
+		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.1mOhm Ron, Qg (typ) 208.0nC, PG-HSOF-8"
+			(at 27.94 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5071,8 +5268,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C19632811"
-			(at 53.34 86.36 0)
+		(property "LCSC" "C22385350"
+			(at 27.94 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5081,26 +5278,26 @@
 			)
 		)
 		(pin "3"
-			(uuid "f5f2f153-5eda-4d45-99b7-f0772da29912")
+			(uuid "e4c866d8-ac37-42d7-899d-9a651aa317b1")
 		)
 		(pin "1"
-			(uuid "c422b391-0b97-4210-9f46-2621c547bb32")
+			(uuid "ba52d9d0-599e-4871-9cd5-6d6e8fa87f0c")
 		)
 		(pin "2"
-			(uuid "f9f35504-f4f0-45af-ad1b-8d521fe6aef2")
+			(uuid "0446eaee-8ea2-4cc4-a957-b652a6557954")
 		)
 		(instances
 			(project "power"
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/819d16f7-432c-45c0-a82d-e0be316f139e"
-					(reference "Q12")
+					(reference "Q9")
 					(unit 1)
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/82d0dbf7-4aa4-4f3d-860b-2473033c4b62"
-					(reference "Q4")
+					(reference "Q1")
 					(unit 1)
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
-					(reference "Q8")
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -5175,98 +5372,6 @@
 				)
 				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
 					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:IPT015N10N5")
-		(at 27.94 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dc0c421e-0822-4eb7-86c7-c6de72f4d17d")
-		(property "Reference" "Q1"
-			(at 33.782 71.374 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPT015N10NF2S"
-			(at 33.782 73.914 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1"
-			(at 33.02 73.025 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8602927687791370240"
-			(at 33.02 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.5mOhm Ron, Qg (typ) 169.0nC, PG-HSOF-8"
-			(at 27.94 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C19632811"
-			(at 27.94 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "36b2d0eb-32ba-471c-a4f6-b8ffa4ba5750")
-		)
-		(pin "1"
-			(uuid "87e190c0-bba3-4c68-b442-e58e2253003b")
-		)
-		(pin "2"
-			(uuid "a15e79f2-ae48-4bac-a52b-a227b899251f")
-		)
-		(instances
-			(project "power"
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/819d16f7-432c-45c0-a82d-e0be316f139e"
-					(reference "Q9")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/82d0dbf7-4aa4-4f3d-860b-2473033c4b62"
-					(reference "Q1")
-					(unit 1)
-				)
-				(path "/38b0a34b-2047-47f6-90d7-ccdf77e8e212/fab384c5-8727-477f-89dd-0ed275dc28df"
-					(reference "Q5")
 					(unit 1)
 				)
 			)
