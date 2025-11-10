@@ -179,6 +179,7 @@ Ignoring the heatsink, that's 64kW/L :)
 	 - 2 phases on at a time on average (same thing as 3 RMS currents)
 	 - parallel rds @ 15V: 0.55mohm at 25C, 0.85mohm at 100C
 	 - P_cond_tot = 2\*170\*170\*0.00055 = 32W
+	 - P_shunt = 2\*170\*170\*0.00033 = 19W
 	 - Q_gs2 = 20nC, Q_gd = 50nC, Q_eff = 70nC
 	 - Q_actual = 140nC cause parallel FETs
 	 - P_sw = 2\*70V\*170A\*25khz\*140nC/4A = 20.8W
@@ -203,6 +204,13 @@ Ignoring the heatsink, that's 64kW/L :)
 	 - I_elec ~= 40A/10 = 4A
 	 - P_elec = 4A^2 \* 3mohm = 48mW
 	 - P_elec_tot = 48mW \* 10 = 0.5W
-	 - Total at 8.4kW = 32+41.6+1.1+1.2+1+1+6.4+0.5+3.4W = 89.1W
-	 - About 98.9% efficiency
-
+	 - Total at 8.4kW = 32+41.6+1.1+1.2+1+1+6.4+0.5+3.4+19= 107.1W
+	 - About 98.8% efficiency
+- **Control**
+	- Max phase current 220A, 210A max (170rms) is 12kW
+	- SVPWM
+	- Optional 3rd harmonic overmodulation
+	- I_phase_rms = I_phase_pk / sqrt(12)
+	- I_pk_pk_ripple = 70V / (2 \* 40uH \* 25khz) \* D \* (1-D) = 8.75A ; D=0.5
+	- I_pk = 4.4A
+	- I_rms = I_pk_pk_ripple / sqrt(12) = 2.5A
