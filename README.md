@@ -185,12 +185,12 @@ Ignoring the heatsink, that's 64kW/L :)
 	 - P_sw = 2\*70V\*170A\*25khz\*140nC/4A = 20.8W
 	 - P_sw_total = 8.925W\*2 half bridge = 41.6W
 	 - P_coss = 12FETs \* 25khz \* 70V^2 \* 2.3nF = 3.4W
-	 - P_winding = 3 phase \* 25khz \* 70V^2 \* 2.5nF = 0.9W
+	 - P_winding_cap = 3 phase \* 25khz \* 70V^2 \* 2.5nF = 0.9W
 	 - P_gate_total = 12 FETs\*250nC\*15V\*25khz = 1.1W
 	 - P_gate_drive = <1W
 	 - Deadtime 150ns
 	 - P_diode = ~1.5\*1.2V\*170A\*25khz\*150ns = 1.2W (a bit sus math but reasonable)
-	 - 5% dissipation factor for 1206 2.2uF ~ 10mohm I think for equivalent 10 (randomish number)
+	 - 4% dissipation factor for 1206 2.2uF ~ 10mohm I think for equivalent 10 (randomish number)
 	 - Sw_energy = 70V\*170A\*140nC/4A = 0.4mJ per phase
 	 - C_droop ~= 0.4mJ/(20uF \* 70V) = 0.3V
 	 - The Vrms of the droop is prob below ~50mV
