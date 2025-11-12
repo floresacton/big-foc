@@ -33,6 +33,7 @@ Ignoring the heatsink, that's 64kW/L :)
   - Simple, low cost
   - Requires minimum duty cycle for bootstrap to charge
   - Usually fine until back emf approaches battery voltage
+  - Pick a fast reverse recovery charge diode
   
 - **Isolated Drivers**:
   - Independent high-side supply
