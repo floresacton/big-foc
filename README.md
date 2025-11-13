@@ -170,7 +170,11 @@ Ignoring the heatsink, that's 64kW/L :)
  - Keep loops as small as possible
  - Shunt amplifier right next to shunt resistor
 
-### 10. Example Calculations (for my inverter)
+### 10. Connectors
+ - Waterproof, either SD13 series or DT Duetch (orange ones) are common
+ - Phase and power wires just shrouded, bolt internally
+
+### 11. Example Calculations (for my inverter)
 - **Motor Characteristics**
 	- 40uH phase to phase inductance
 	- AMKs have 2.5nF inter winding capacitance
