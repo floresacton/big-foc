@@ -116,6 +116,8 @@ Ignoring the heatsink, that's 64kW/L :)
 
 #### Temperature Monitoring
 - NTC thermistor (cheaper than PTC) on heatsink or FETs
+- Lower B kind of better like 3400 because more linear over big range
+- 10k 3400B ~= 1k at 100C, 30k at 0C
 
 #### Fast Overvoltage Protection
 - Hardware comparator for <1µs response time
