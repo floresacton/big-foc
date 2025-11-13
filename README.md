@@ -115,7 +115,7 @@ Ignoring the heatsink, that's 64kW/L :)
 ### 6. Protection and Sensing
 
 #### Temperature Monitoring
-- NTC thermistor on heatsink or FETs
+- NTC thermistor (cheaper than PTC) on heatsink or FETs
 
 #### Fast Overvoltage Protection
 - Hardware comparator for <1µs response time
