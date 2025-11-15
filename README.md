@@ -2,7 +2,7 @@
 Field Oriented Control Inverter
 70V 160A 10kW continuous
 12kW peak
-99% efficiency at 15kW
+98.5% efficiency at 15kW
 50$ BOM Cost
 65x75x32mm size
 Ignoring the heatsink, that's 64kW/L :)
