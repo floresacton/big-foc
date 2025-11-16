@@ -5,7 +5,7 @@ Field Oriented Control Inverter
 
 12kW peak
 
-98.5% efficiency at 8kW
+99% efficiency at 8kW
 
 50$ BOM Cost
 
