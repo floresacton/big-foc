@@ -7,7 +7,7 @@ Field Oriented Control Inverter
 
 99% efficiency at 8kW
 
-50$ BOM Cost
+48$ BOM Cost
 
 65x75x32mm size
 
