@@ -1,10 +1,16 @@
 # big-foc
 Field Oriented Control Inverter
+
 70V 160A 10kW continuous
+
 12kW peak
-99% efficiency at 15kW
-50$ BOM Cost
+
+99% efficiency at 8kW
+
+48$ BOM + PCB Cost
+
 65x75x32mm size
+
 Ignoring the heatsink, that's 64kW/L :)
 
 ## Design Strategy
@@ -33,6 +39,7 @@ Ignoring the heatsink, that's 64kW/L :)
   - Simple, low cost
   - Requires minimum duty cycle for bootstrap to charge
   - Usually fine until back emf approaches battery voltage
+  - Pick a fast reverse recovery charge diode
   
 - **Isolated Drivers**:
   - Independent high-side supply
@@ -114,7 +121,9 @@ Ignoring the heatsink, that's 64kW/L :)
 ### 6. Protection and Sensing
 
 #### Temperature Monitoring
-- NTC thermistor on heatsink or FETs
+- NTC thermistor (cheaper than PTC) on heatsink or FETs
+- Lower B kind of better like 3400 because more linear over big range
+- 10k 3400B ~= 1k at 100C, 30k at 0C
 
 #### Fast Overvoltage Protection
 - Hardware comparator for <1µs response time
@@ -167,7 +176,11 @@ Ignoring the heatsink, that's 64kW/L :)
  - Keep loops as small as possible
  - Shunt amplifier right next to shunt resistor
 
-### 10. Example Calculations (for my inverter)
+### 10. Connectors
+ - Waterproof, either SD13 series or DT Duetch (orange ones) are common
+ - Phase and power wires just shrouded, bolt internally
+
+### 11. Example Calculations (for my inverter)
 - **Motor Characteristics**
 	- 40uH phase to phase inductance
 	- AMKs have 2.5nF inter winding capacitance
