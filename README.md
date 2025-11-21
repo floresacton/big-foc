@@ -197,6 +197,7 @@ Ignoring the heatsink, that's 64kW/L :)
 	 - Q_actual = 140nC cause parallel FETs
 	 - P_sw = 2\*70V\*170A\*25khz\*140nC/4A = 20.8W
 	 - P_sw_total = 8.925W\*2 half bridge = 41.6W
+     - P_recovery = 25khz\*200nC\*70V*8FETs = 2.8W
 	 - P_coss = 12FETs \* 25khz \* 70V^2 \* 2.3nF = 3.4W
 	 - P_winding_cap = 3 phase \* 25khz \* 70V^2 \* 2.5nF = 0.9W
 	 - P_gate_total = 12 FETs\*250nC\*15V\*25khz = 1.1W
@@ -217,8 +218,8 @@ Ignoring the heatsink, that's 64kW/L :)
 	 - I_elec ~= 40A/10 = 4A
 	 - P_elec = 4A^2 \* 3mohm = 48mW
 	 - P_elec_tot = 48mW \* 10 = 0.5W
-	 - Total at 8.4kW = 32+41.6+1.1+1.2+1+1+6.4+0.5+3.4+19= 107.1W
-	 - About 98.8% efficiency
+	 - Total at 8.4kW = 32+41.6+1.1+1.2+1+1+6.4+0.5+3.4+19+2.8= 109.9W
+	 - About 98.6% efficiency
 - **Control**
 	- Max phase current 220A, 210A max (170rms) is 12kW
 	- SVPWM
